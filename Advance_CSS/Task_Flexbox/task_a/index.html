@@ -1,0 +1,34 @@
+<nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/products">Our Products</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+<style> body{
+    font: 1.2em / 1.5 sans-serif;
+  }
+  nav ul {
+    max-width: 750px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav a:link,
+  nav a:visited {
+    background-color: #4d7298;
+    border: 2px solid #77a6b6;
+    border-radius: 0.5em;
+    color: white;
+    padding: 0.5em;
+    display: inline-block;
+    text-decoration: none;
+  }
+  /*Used flex */
+  nav ul {
+    display:flex;/*for single row,column representation*/
+    justify-content: space-between;/*equal space between containers*/
+  }
+  </style>

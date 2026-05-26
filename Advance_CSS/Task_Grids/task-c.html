@@ -1,0 +1,42 @@
+<div class="grid">
+    <div class="one">One</div>
+    <div class="two">Two</div>
+    <div class="three">Three</div>
+    <div class="four">Four</div>
+  </div>
+
+  <style>
+    body {
+  font: 1.2em / 1.5 sans-serif;
+}
+.grid > * {
+  background-color: #4d7298;
+  border: 2px solid #77a6b6;
+  border-radius: 0.5em;
+  color: white;
+  padding: 0.5em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  /*define layout using names areas*/
+  grid-template-areas: /*create a map which named area goes in grid*/
+  "aa aa"/*1st row aa spans both columns*/
+  "bb cc"/*half b and half c*/
+  ". dd";/*d in 2nd half*/
+}
+.one{
+    grid-area:aa;/*assigns name to grid*/
+}
+.two{
+    grid-area:bb;
+}
+.three{
+    grid-area:cc;
+}
+.four{
+    grid-area:dd;
+}
+  </style>

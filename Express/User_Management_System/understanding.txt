@@ -1,0 +1,76 @@
+The complete flow :-- 
+Client Request -> Route Check -> Middleware Process -> Controller -> Service -> DB -> Response Send
+
+The Folders:--
+src/config :- sets the app with the environment
+src/routes :- routes the URL to the Controller
+src/middleware :- processes the request 
+src/controllers :- extract the data and process the request and send the response 
+src/services :- data processing, calculations and external api calls    
+src/models :- DB schema 
+
+┌─────────────────┐
+│  CLIENT REQUEST │ (Frontend/Mobile/Postman)
+└────────┬────────┘
+         │
+         ▼
+    ┌──────────┐
+    │ src/app.js
+    │ (Server Setup)
+    └──────┬───┘
+           │
+           ▼
+    ┌────────────────────────────┐
+    │ MIDDLEWARES                │
+    │ 1. Express JSON parser     │
+    │ 2. CORS                    │
+    │ 3. Logging                 │
+    └──────┬─────────────────────┘
+           │
+           ▼
+    ┌────────────────────────────┐
+    │ routes/index.js            │
+    │ (Route Matching)           │
+    │ /api/v1/users → user route │
+    └──────┬─────────────────────┘
+           │
+           ▼
+    ┌────────────────────────────┐
+    │ routes/userRoutes.js       │
+    │ (Specific Route)           │
+    │ POST /users → controller   │
+    └──────┬─────────────────────┘
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │ middlewares/authMiddleware   │ (अगर protection है)
+    │ (Token Check)                │
+    └──────┬───────────────────────┘
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │ controllers/userController   │
+    │ (Business Logic)             │
+    │ - Data validate करो         │
+    │ - Database को भेजो          │
+    └──────┬───────────────────────┘
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │ config/database.js           │
+    │ (Data Store/Fetch)           │
+    │ - Array में data add करो     │
+    │ - या data निकालो            │
+    └──────┬───────────────────────┘
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │ Response वापस भेजो           │
+    │ JSON format में              │
+    └──────┬───────────────────────┘
+           │
+           ▼
+┌─────────────────┐
+│  CLIENT जवाब    │ (Frontend दिखेगा)
+│  पाता है         │
+└─────────────────┘

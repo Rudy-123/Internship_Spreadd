@@ -1,0 +1,26 @@
+<div class="grid">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+  </div>
+
+<style>
+    body {
+  font: 1.2em / 1.5 sans-serif;
+}
+
+.grid > * {
+  background-color: #4d7298;
+  border: 2px solid #77a6b6;
+  border-radius: 0.5em;
+  color: white;
+  padding: 0.5em;
+}
+
+.grid {
+  display: grid;/*grid layout*/
+  grid-template-columns: 1fr 1fr 1fr;/*equal width columns*/
+  gap:20px;/*the gap between columns*/
+}
+</style>

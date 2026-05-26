@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "First Post",
+      "author": "Rudra"
+    },
+    {
+      "id": "2",
+      "title": "Second Post",
+      "author": "Admin"
+    },
+    {
+      "title": "hello ",
+      "author": "Rudra",
+      "id": "1LNWbARMW6c"
+    },
+    {
+      "title": "heyy there i am completely fine ",
+      "author": "Rudra",
+      "id": "g0lPabA_RGw"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "Great post!",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "body": "Thanks!",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "rudra",
+      "email": "rudra@example.com"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

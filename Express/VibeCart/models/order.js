@@ -1,0 +1,45 @@
+const mongoose=require('mongoose')
+const orderSchema=new mongoose.Schema({
+    orderNumber:{
+        type:Number,
+        unique:true,
+        required:true,
+    },
+    //array of products for the buy of multiple products
+    products:[
+        {
+            product:{
+                type:mongoose.Schema.Types.ObjectId,
+                required:true,
+                ref:'Product',
+            },
+            quantity:{
+                type:Number,
+                required:true,
+                min:1,
+            },
+            price:{
+                type:Number,
+                required:true,
+            },
+        },
+    ],
+    totalprice:{
+        type:Number,
+        required:true,
+    },
+    customerName:{
+        type:String,
+        required:true,
+    },
+    customerEmail:{
+        type:String,
+        required:true,
+    },
+    status:{
+        type:String,
+        enum:['Pending','Confirmed','Shipped','Delivered','Cancelled'],
+        default:'Pending',
+    },
+},{timestamps:true});
+module.exports=mongoose.model('Order',orderSchema);
